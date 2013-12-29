@@ -22,9 +22,10 @@ function setup()
 			document.getElementById("api_key").value = apiKey;
 		}
 
-		if(status == "upcoming" )
-		{
+		if (status == "upcoming" ) {
 			document.getElementById("status").selectedIndex = 1;
+		} else if (status != "today") {
+			widget.setPreferenceForKey("today","asanaDailyTasksStatus");
 		}
 
 		refresh();
@@ -135,7 +136,13 @@ function refreshEnded(x)
 		area.appendChild(tdiv);
 	}
 
-	gMyScrollArea.refresh();
+	if (gMyScrollArea)
+		gMyScrollArea.refresh();
+
+	var update = document.getElementById('front_header_update');
+	var currentdate = new Date();
+	update.innerText = "Last update: " + currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate() + " " +
+		+ currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 }
 
 function refreshOutput(out)
@@ -148,10 +155,12 @@ function refreshOutput(out)
 function refresh()
 {
 	area = document.getElementById('myScrollArea');	
-	area.innerHTML = "Refreshing...";
+	area.innerHTML = "";
 	var hidden = document.getElementById('hidden_json');
 	hidden.innerHTML = "";
 	gMyScrollArea.refresh();
+	var update = document.getElementById('front_header_update');
+	update.innerText = "Refreshing...";
 
 	if(window.widget)
 	{

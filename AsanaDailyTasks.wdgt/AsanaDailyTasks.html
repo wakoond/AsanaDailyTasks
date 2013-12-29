@@ -10,19 +10,39 @@
 </head>
 <body onload='setup();'>
    <div id="front" onmousemove='mousemove(event);' onmouseout='mouseexit(event);'>
-   		<img src="Icon.png" id="icon">
-		<div id="myScrollArea">
-			<div id="helloText">Asana Daily Tasks</div>
-		</div>
-    	<div id="myScrollbar"></div>
+   		<div id="front_header" class="header">
+   			<div id="front_header_text" class="header_text">
+	   			My Daily Tasks
+   				<div id="front_header_update" class="header_text_2">
+   					Please refresh!
+   				</div>
+   			</div>
+   			<div id="front_header_icon" class="header_icon">
+		   		<img src="Icon.png" id="icon">
+		   	</div>
+	   	</div>
+	   	<div id="front_body">
+			<div id="myScrollArea"></div>
+    		<div id="myScrollbar"></div>
+    	</div>
     	<div id="refresh" onclick="refresh()">Refresh</div>
     </div>
 
     <div id="back" onmousemove='mousemove(event);' onmouseout='mouseexit(event);'>
-    	<img src="Icon.png" id="icon">
+    	<div id="back_header" class="header">
+   			<div id="back_header_text" class="header_text">
+	   			My Daily Tasks
+   				<div id="back_header_text_2" class="header_text_2">
+   					Preferences
+   				</div>
+   			</div>
+   			<div id="back_header_icon" class="header_icon">
+		   		<img src="Icon.png" id="icon">
+		   	</div>
+	   	</div>
     	<div id="prefs">
 	    	API key:<br>
-	    	<input type="text" length="40" id="api_key" onchange="changeApiKey(this);" value="xxx"></input><br><br>
+	    	<input type="text" maxlength="40" id="api_key" onchange="changeApiKey(this);" value="xxx"></input><br><br>
 			Status:<br>
 			<select id="status" onchange='changeStatus(this);'>
 				<option value="today">Daily tasks</option>

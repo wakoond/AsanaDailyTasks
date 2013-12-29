@@ -1,12 +1,13 @@
 
 body {
 	margin: 0;
+	cursor: default;
 }
 
 .flip {
 	position:absolute;
-	bottom: 3px;
-	right: 3px;
+	bottom: 10px;
+	right: 10px;
 	width:13px;
 	height:13px;
 }
@@ -25,6 +26,52 @@ body {
 
 }
 
+.header {
+	font: 16px "Lucida Grande";
+	font-weight: bold;
+	height: 68px;
+	width: 100%;
+	position: relative;
+}
+
+.header_text {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 225px;
+	height: 61px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.header_icon {
+	position: absolute;
+	top: 3px;
+	right: 10px;
+	width: 68px;
+}
+
+.header_text_2 {
+	font: 12px "Lucida Grande";
+	font-weight: normal;
+	font-style: italic;
+}
+
+#back_header {
+	color: white;
+}
+
+#icon {
+	width: 68px;
+	height: 68px;
+}
+
+#front_body {
+	position: relative;
+	width: 100%;
+	height: 330px;
+}
+
 #myScrollArea {
     position: absolute;
     top: 10px;
@@ -41,44 +88,44 @@ body {
     width: 19px;
 }
 
-#icon {
-	width: 68px;
-	height: 68px;
+#refresh {
 	position: absolute;
-	top: 2px;
-	right: 22px;
-	float: right;
+    bottom: 5px;
+    left: 51px;
+    text-align: center;
+    height: 15px;
+    width: 200px;
+}
+
+#refresh:hover {
+	position: absolute;
+    bottom: 5px;
+    left: 51px;
+    text-align: center;
+    height: 15px;
+    width: 200px;
+    border: solid 1px black;
 }
 
 #front {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 300px;
-	height: 400px;
-	border: solid blue 1px;
-	background: #7baaff;
+	width: 303px;
+	height: 403px;
+	background: url("Images/AsanaDailyTasksFront.png") no-repeat;
 	display: block;
 	font: 14px "Lucida Grande";
 	font-weight: bold;
 } 
 
-#refresh {
-	position: absolute;
-    bottom: 5px;
-    text-align: center;
-    height: 15px;
-    width: 300px;
-}
-
 #back {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 300px;
-	height: 400px;
-	border: solid blue 1px;
-	background: #7baaff;
+	width: 303px;
+	height: 403px;
+	background: url("Images/AsanaDailyTasksBack.png") no-repeat;
 	display: none;
 	font: 14px "Lucida Grande";
 	font-weight: bold;
@@ -88,11 +135,26 @@ body {
 
 #prefs {
 	position: relative;
-	top: 150;
+	top: 110px;
 	display: inline;
-	height: 60px;
+	height: 70px;
 	vertical-align: middle;
 	text-align: center;
+	color: white;
+}
+
+#api_key {
+	width: 200px;
+	background-color: #4c4c4c;
+	border: solid 1px white;
+	color: white;
+}
+
+#status {
+	width: 200px;
+	background-color: #4c4c4c;
+	border: solid 1px white;
+	color: white;
 }
 
 #hidden_jsnon {
